@@ -6,6 +6,8 @@ from tkinter import messagebox
 from PIL import Image , ImageTk
 from playsound import playsound 
 import urllib.request
+import subprocess
+import os
 
 
 root = customtkinter.CTk()
