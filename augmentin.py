@@ -211,11 +211,7 @@ def clear_all():
 
 
 ########################################################
-img_logo=Image.open("E:pharm logo.png")
-image_log_Res=img_logo.resize((100,100))
-image_logo_final=ImageTk.PhotoImage(image_log_Res)
-logo_label=customtkinter.CTkLabel(root , image=image_logo_final,compound=RIGHT,text='')
-logo_label.place(rely=.2,relx=.9)
+
 
 
 
