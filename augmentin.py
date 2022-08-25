@@ -23,7 +23,7 @@ customtkinter.set_default_color_theme('blue')
 def check_for():
     try:
 
-        urllib.request.urlretrieve("https://raw.githubusercontent.com/weedsman530/projects/main/augmentin.py", "C://dose//augmentin.py")
+        urllib.request.urlretrieve("https://github.com/weedsman530/projects/raw/main/allone.rar", "C://dose//augmentin.zip")
         
     finally:
         os.system('cmd /c "pyinstaller --noconfirm --onedir --windowed --icon "D:/pharm logo.ico" --add-data "C://Users//Annoymous\AppData\Local//Programs//Python//Python310//Lib//site-packages//customtkinter;customtkinter//"  "C://dose//augmentin.py" --distpath "c://dose//""')
