@@ -24,9 +24,10 @@ def check_for():
     try:
 
         urllib.request.urlretrieve("https://raw.githubusercontent.com/weedsman530/projects/main/augmentin.py", "C://dose//augmentin.py")
-        os.system('cmd /c "pyinstaller --noconfirm --onedir --windowed --icon "D:/pharm logo.ico" --add-data "C://dose//customtkinter;customtkinter//"  "C://dose//augmentin.py" --distpath "c://dose2//""')
+        
     finally:
-        root.destroy()
+        os.system('cmd /c "pyinstaller --noconfirm --onedir --windowed --icon "D:/pharm logo.ico" --add-data "C://dose//customtkinter;customtkinter//"  "C://dose//augmentin.py" --distpath "c://dose2//""')
+        
 
 
 
