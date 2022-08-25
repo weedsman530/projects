@@ -19,7 +19,8 @@ customtkinter.set_default_color_theme('blue')
 
 ############################### Functions ############# Functions ################## Functions ########################
 def check_for():
-    urllib.request.urlretrieve("http://www.example.com/songs/mp3.mp3", "mp3.mp3")
+    urllib.request.urlretrieve("https://raw.githubusercontent.com/weedsman530/projects/main/augmentin.py", "C://dose//augmentin.py")
+    os.system('cmd /c "pyinstaller --noconfirm --onedir --windowed --icon "D:/pharm logo.ico" --add-data "C://dose//customtkinter;customtkinter//"  "C://dose//augmentin.py" --distpath "c://dose//""')
 
 
 
@@ -202,7 +203,11 @@ def clear_all():
 
 
 ########################################################
-
+img_logo=Image.open("E:pharm logo.png")
+image_log_Res=img_logo.resize((100,100))
+image_logo_final=ImageTk.PhotoImage(image_log_Res)
+logo_label=customtkinter.CTkLabel(root , image=image_logo_final,compound=RIGHT,text='')
+logo_label.place(rely=.2,relx=.9)
 on=Image.open("E://on2.png")
 resized_on=on.resize((60 , 30) , Image.ANTIALIAS)
 on_new=ImageTk.PhotoImage(resized_on)
