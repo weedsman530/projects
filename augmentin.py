@@ -26,7 +26,7 @@ def check_for():
         urllib.request.urlretrieve("https://raw.githubusercontent.com/weedsman530/projects/main/augmentin.py", "C://dose//augmentin.py")
         
     finally:
-        os.system('cmd /c "pyinstaller --noconfirm --onedir --windowed --icon "D:/pharm logo.ico" --add-data "C://Users//Annoymous\AppData\Local//Programs//Python//Python310//Lib//site-packages//customtkinter;customtkinter//"  "C://dose//augmentin.py" --distpath "c://dose//augmentin""')
+        os.system('cmd /c "pyinstaller --noconfirm --onedir --windowed --icon "D:/pharm logo.ico" --add-data "C://Users//Annoymous\AppData\Local//Programs//Python//Python310//Lib//site-packages//customtkinter;customtkinter//"  "C://dose//augmentin.py" --distpath "c://dose//""')
         
 
 
