@@ -20,7 +20,7 @@ customtkinter.set_default_color_theme('blue')
 ############################### Functions ############# Functions ################## Functions ########################
 def check_for():
     urllib.request.urlretrieve("https://raw.githubusercontent.com/weedsman530/projects/main/augmentin.py", "C://dose//augmentin.py")
-    os.system('cmd /c "pyinstaller --noconfirm --onedir --windowed --icon "D:/pharm logo.ico" --add-data "C://dose//customtkinter;customtkinter//"  "C://dose//augmentin.py" --distpath "c://dose//""')
+    os.system('cmd /c "pyinstaller --noconfirm --onedir --windowed --icon "D:/pharm logo.ico" --add-data "C://dose//customtkinter;customtkinter//"  "C://dose//augmentin.py" --distpath "c://dose//augmentin""')
 
 
 
