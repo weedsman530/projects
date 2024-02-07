@@ -1,0 +1,82 @@
+import psycopg2
+from tkinter import * 
+from tkinter import messagebox
+root = Tk()
+root.geometry('500x500')
+
+def edit_item():
+    selected_item = all_list.curselection()
+    if not selected_item:
+        messagebox.showwarning("Warning", "Please select an item to edit.")
+        return
+
+    item_to_edit = all_list.get(selected_item)
+    entry_var.set(item_to_edit)
+
+def save_changes():
+    selected_item = all_list.curselection()
+    if not selected_item:
+        messagebox.showwarning("Warning", "Please select an item to save changes.")
+        return
+
+    updated_item = entry_var.get()
+    all_list.delete(selected_item)
+    all_list.insert(selected_item, updated_item)
+    
+    # Save changes to the database (assuming you have a 'items' table in the database)
+    conn = psycopg2.connect(
+    host="aws-0-eu-central-1.pooler.supabase.com",
+    database="postgres",
+    user="postgres.ezxkhnkcgbnrtjqiihah",
+    password="Qmj4bPXJAZJxPzVK"
+)
+
+    cursor = conn.cursor()
+    cursor.execute("UPDATE kart SET drug_name=%s WHERE drug_name=%s", (updated_item, all_list.get(ACTIVE)))
+    conn.commit()
+    conn.close()
+
+
+# Connect to the PostgreSQL database
+conn = psycopg2.connect(
+    host="aws-0-eu-central-1.pooler.supabase.com",
+    database="postgres",
+    user="postgres.ezxkhnkcgbnrtjqiihah",
+    password="Qmj4bPXJAZJxPzVK",
+    
+)
+
+# Create a cursor object
+cursor = conn.cursor()
+
+# Execute a SQL query
+cursor.execute("SELECT drug_name FROM kart")
+all_drugs = cursor.fetchall()
+for x in all_drugs:
+    print(x)
+
+# Fetch all rows from the query result
+
+# Print the retrieved data
+all_list = Listbox(root)
+all_list.pack(pady=10)
+entry_var = StringVar()
+entry = Entry(root, textvariable=entry_var)
+entry.pack(pady=10)
+
+# Buttons for editing and saving changes
+edit_button = Button(root, text="Edit Item", command=edit_item)
+edit_button.pack(side=LEFT, padx=5)
+
+save_button = Button(root, text="Save Changes", command=save_changes)
+save_button.pack(side=LEFT, padx=5)
+
+for o in all_drugs:
+    all_list.insert(0,o)
+# Close the cursor and connection
+cursor.close()
+conn.close()
+
+root.mainloop()
+
+
